@@ -1,0 +1,57 @@
+site_name: MXM
+repo_url: "https://github.com/mbari-org/mxm-doc"
+edit_uri: "tree/main/docs/"
+theme:
+  name: material
+  logo: https://docs.mbari.org/imgs/mbari-logo.png
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: light
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+extra:
+  version: '1.8.3'
+
+extra_css:
+  - extra/extra.css
+
+plugins:
+  - search
+  - mermaid2:
+      arguments:
+        # https://github.com/fralau/mkdocs-mermaid2-plugin#material-theme-switching-the-mermaid-diagram-on-the-fly-between-light-and-dark-mode
+        # test if its __palette_1 (dark) or __palette_2 (light)
+        # for mkdocs-material >=8.0.0
+        #      ^(JSON.parse(__md_get("__palette").index == 1)) ? 'dark' : 'light'
+        # for mkdocs-material <8.0.0
+        #      ^(JSON.parse(window.localStorage.getItem(__prefix('__palette'))).index == 1) ? 'dark' : 'light'
+        theme: |
+          ^(JSON.parse(window.localStorage.getItem(__prefix('__palette'))).index == 1) ? 'dark' : 'light'
+
+extra_javascript:
+  - extra/refresh_on_toggle_dark_light.js
+
+markdown_extensions:
+  - meta
+  - admonition
+  - pymdownx.tabbed
+  - pymdownx.highlight
+  - pymdownx.superfences:
+      # make exceptions to highlighting of code:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
+  - footnotes
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: index.md

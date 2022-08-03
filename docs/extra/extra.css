@@ -1,0 +1,49 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300);
+@import url(https://docs.mbari.org/css/iosevka-custom/iosevka-custom.css);
+
+body {
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+}
+
+code, tt {
+  font-family: 'Iosevka', 'Roboto Mono', monospace;
+  font-weight: 400;
+  font-variant-ligatures: none;
+}
+
+[data-md-color-scheme=slate] {
+  --md-typeset-a-color: #a6c1f1;
+}
+
+blockquote {
+  display:block;
+  padding: 8px 5px 1px 10px;
+  position: relative;
+
+  font-size: smaller !important;
+  color: gray;
+
+  box-shadow: 2px 2px 8px #ccc;
+}
+blockquote > p {
+  /*font-size: small !important;*/
+  margin-bottom: 12px;
+}
+
+ul {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+p:last-child {
+  margin-bottom: 10px !important;
+}
+
+.wy-side-nav-search {
+  background: #045fae !important;
+}
+/*
+p.admonition-title {
+  background: #045fae !important;
+}
+*/
