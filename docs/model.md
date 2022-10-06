@@ -59,5 +59,5 @@ to provide a value for a required or optional parameter.
 
 ## Unit
 
-Defines a unit of measure for a parameter. 
-
+Defines a unit of measure, which can be referenced by parameter when the relevant provider indicates that
+it uses units of measure for its parameters.
