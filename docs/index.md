@@ -57,7 +57,7 @@ The main goals of the MXM project are:
 - Significantly improve user interfaces for definition, editing, and validation of missions;
 - Provide a unified view of mission information across the various systems to facilitate mission coordination and
   decision-making;
-- “Factor out” and extend common functionality in various existing systems regarding mission parameterization and
+- "Factor out" and extend common functionality in various existing systems regarding mission parameterization and
   execution (ODSS, LRAUV/TethysDash, TSAUV Front Tracking, Dorado, UAV’s);
 - Facilitate interoperability with external tools and applications for enhanced mission definition and visualization
   capabilities as well as expanded sharing of execution information (Neptus, WGMS / LEO, Geomar Navigator, ROS).
