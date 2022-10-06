@@ -54,3 +54,4 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Model: model.md
