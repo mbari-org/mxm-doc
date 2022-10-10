@@ -3,17 +3,41 @@
 WiP
 
 ```mermaid
-flowchart LR
+flowchart TB
   Provider        -->|defines| MissionTemplate;
+  Provider        -->|executes| Mission;
+  Provider        -->|reports| MissionStatus;
+  Provider        -->|reports| AssetStatus;
   MissionTemplate -->|has| Parameter;
   MissionTemplate -->|applies to| AssetClass;
-  Parameter       -->|has| Unit;
+  Mission         -->|type| MissionTemplate;
   Mission         -->|has| Argument;
-  Provider        -->|executes| Mission;
+  Mission         -->|for| Asset;
+  Parameter       -->|has| Unit;
   Argument        -->|for| Parameter;
   Asset           -->|type| AssetClass;
-  Mission         -->|for| Asset;
-  Mission         -->|type| MissionTemplate;
+  MissionStatus   -->|refers to| Mission;
+  MissionStatus   -->|includes| DataReport;
+  MissionStatus   -->|includes| AssetStatus;
+```
+
+```mermaid
+erDiagram
+  Provider ||--o{ MissionTemplate : defines
+  Provider ||--o{ Mission : "executes"
+  Provider ||--o{ MissionStatus : "reports"
+  Provider ||--o{ AssetStatus : "reports"
+  MissionTemplate ||--|{ Parameter : "has"
+  MissionTemplate ||--|| AssetClass : "applies to"
+  Mission ||--o{ MissionTemplate : "type"
+  Mission ||--o{ Argument : "has"
+  Mission ||--|| Asset : "for"
+  Parameter ||--o| Unit : "has"
+  Argument ||--|| Parameter : "for"
+  Asset ||--o{ AssetClass : "type"
+  MissionStatus ||--|| Mission : "refers to"
+  MissionStatus ||--o{ DataReport : "includes"
+  MissionStatus ||--o{ AssetStatus : "includes"
 ```
 
 ## Provider
