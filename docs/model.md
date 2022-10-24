@@ -159,19 +159,34 @@ The `AssetStatus` entity includes the following attributes:
 
 ## Examples
 
-!!! Example "TethysDash/LRAUV system"
+Example of models above in the context of various providers:
+
+### TethysDash/LRAUV system
+
+!!! Example ""
     - **Provider**: TethysDash/LRAUV
     - **AssetClass**: LRAUV
     - **Assets**: Daphne, Makai
     - **Mission templates**: Science/sci2, Maintenance/ballast_and_trim
     - **Parameters**: MissionTimeout, ApproachSpeed
 
-!!! Example "WG FrontTracking"
+### WG FrontTracking
+
+!!! Example ""
     - **Provider**: WG FrontTracking
     - **AssetClass**: Waveglider
     - **Assets**: Tiny, Hansen, SV3-117
-    - **Mission template**: "TrackFront"
+    - **Mission template**: TrackFront
     - **Parameters**: temperature_threshold, boundary_polygon
+
+### Dorado system
+
+!!! Example ""
+    - **Provider**: Dorado system
+    - **AssetClass**: Dorado
+    - **Assets**: ...
+    - **Mission templates**: ...
+    - **Parameters**: ...
 
 ---
 
