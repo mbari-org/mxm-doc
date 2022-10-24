@@ -34,16 +34,26 @@ and associated reporting in terms of mission and asset status and data generated
 
 #### Provider Capabilities
 
-As part of the registration process, a provider indicates which capabilities it supports.
-This is mainly intended to allow some flexibility and incremental integration of providers.
+By default, MXM will assume a minimum set of required capabilities.
+During registration, the provider can indicate additional capabilities as described below.
+This is intended to allow some flexibility, especially to accommodate various levels
+of sophistication of the integrated providers.
 
-Capabilities include:
+The provider can indicate whether it:
 
-- Use of _scheduling_ when issuing missions for execution
-- Use of _units of measure_ for the mission template parameters 
-- Ability to validate a mission draft before actual submission
-- Ability to report the status of submitted missions
-- Ability to report the status of a handled asset (not necessarily via mission status report)
+- Uses _scheduling_ when issuing missions for execution
+- Uses _units of measure_ for the mission template parameters 
+- Can validate a mission draft before actual submission
+    - yes or not; summary of the validation process
+    - result of feasibility analysis, e.g.:
+        - will the asset hit the bottom/get too close to shore/etc.?
+    - Projected time of mission completion
+    - Asset location at mission completion
+- Can report the status of previously submitted missions
+    - via explicit request from MXM and/or asynchronously via push notifications to MXM 
+- Can report the status of a handled asset (not necessarily via mission status report)
+    - current position / latest positions; heading; speed; etc.
+    - battery level, etc.
 
 
 ### MissionTemplate
