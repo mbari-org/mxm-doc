@@ -30,12 +30,12 @@ mission execution system.
 
 Basically, a provider indicates the _mission templates_ and _assets_ that it handles,
 and supports both the execution of _missions_ defined according to such mission templates,
-and associated reporting in terms of mission and asset status and data generated.
+and associated reporting in terms of mission and asset status and generated data.
 
 #### Provider Capabilities
 
 By default, MXM will assume a minimum set of required capabilities.
-During registration, the provider can indicate additional capabilities as described below.
+At registration, the provider can optionally indicate additional capabilities as described below.
 This is intended to allow some flexibility, especially to accommodate various levels
 of sophistication of the integrated providers.
 
