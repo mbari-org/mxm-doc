@@ -5,6 +5,10 @@ theme:
   name: material
   logo: https://docs.mbari.org/imgs/mbari-logo.png
   palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: light
       toggle:
@@ -40,7 +44,8 @@ extra_javascript:
 markdown_extensions:
   - meta
   - admonition
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true # https://github.com/squidfunk/mkdocs-material/discussions/5703#discussioncomment-6429820
   - pymdownx.highlight
   - pymdownx.superfences:
       # make exceptions to highlighting of code:
